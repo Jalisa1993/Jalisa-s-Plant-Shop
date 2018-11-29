@@ -15,14 +15,14 @@ namespace Plant.Data
         Biennial,
     }
 
-    class Plant
+    public class Plant
     {
         [Key]
         public int PlantId { get; set; }
         [Required]
         public string PlantName { get; set; }
         [Required]
-        public  PlantType TypeOfPlant { get; set; }
+        public PlantType TypeOfPlant { get; set; }
         [Required]
         public decimal Price { get; set; }
         [Required]
