@@ -201,7 +201,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -281,6 +280,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Plant.Data\Plant.Data.csproj">
+      <Project>{6cf6a2bb-41d6-46d5-8879-b12fcbca75f1}</Project>
+      <Name>Plant.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plant.Models\Plant.Models.csproj">
+      <Project>{2ed5b115-7945-40d4-950f-bdb48f815985}</Project>
+      <Name>Plant.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plant.Services\Plant.Services.csproj">
+      <Project>{fbd35cb9-c5ab-407f-8b35-7945e5a6afcb}</Project>
+      <Name>Plant.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
