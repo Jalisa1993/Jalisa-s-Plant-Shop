@@ -54,9 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cart.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Plant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
