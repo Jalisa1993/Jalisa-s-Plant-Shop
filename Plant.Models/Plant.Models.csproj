@@ -54,7 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartListItem.cs" />
+    <Compile Include="PlantListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,22 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Plant.Data
+namespace Plant.Models
 {
-    public class Cart
+   public class CartListItem
     {
-        [Key]
         public int CartId { get; set; }
-        [Required]
-        public int UserId { get; set; }
-        [Required]
         public int PlantId { get; set; }
-        [Required]
         public decimal TotalPrice { get; set; }
-        public virtual Plant Plants { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
