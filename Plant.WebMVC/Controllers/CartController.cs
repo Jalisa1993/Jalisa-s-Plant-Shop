@@ -16,5 +16,10 @@ namespace Plant.WebMVC.Controllers
             var model = new CartListItem[0];
             return View(model);
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }

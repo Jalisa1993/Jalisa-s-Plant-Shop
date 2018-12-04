@@ -7,13 +7,16 @@ using System.Threading.Tasks;
 
 namespace Plant.Models
 {
-   public class PlantListItem
+    class PlantCreate
     {
-        [Display(Name="PlantNumber")]
+        [Key]
         public int PlantId { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
+        [Required]
         public int Quantity { get; set; }
+        [Required]
+        public decimal Price { get; set; }
+        [Required]
+        public string Name { get; set; }
 
         public override string ToString() => Name;
     }

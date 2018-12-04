@@ -54,9 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartCreate.cs" />
     <Compile Include="CartListItem.cs" />
+    <Compile Include="PlantCreate.cs" />
     <Compile Include="PlantListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestCreate.cs" />
     <Compile Include="RequestListItem.cs" />
   </ItemGroup>
   <ItemGroup>
