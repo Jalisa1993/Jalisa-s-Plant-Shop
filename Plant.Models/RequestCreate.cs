@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Plant.Models
 {
-    class RequestCreate
+    public class RequestCreate
     {
         [Key]
         public int RequestId { get; set; }

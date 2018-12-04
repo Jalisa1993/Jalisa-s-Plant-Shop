@@ -7,17 +7,26 @@ using System.Threading.Tasks;
 
 namespace Plant.Models
 {
-    class PlantCreate
+    public enum PlantType
+    {
+        Annual,
+        Evergreen,
+        Perennials,
+        Biennial,
+    }
+
+    public class PlantCreate
     {
         [Key]
         public int PlantId { get; set; }
         [Required]
-        public int Quantity { get; set; }
-        [Required]
-        public decimal Price { get; set; }
+        public PlantType TypeOfPlant { get; set; }
         [Required]
         public string Name { get; set; }
+        [Required]
+        public int Quantity { get; set; }
 
         public override string ToString() => Name;
+        
     }
 }

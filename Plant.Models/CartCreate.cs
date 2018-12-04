@@ -7,15 +7,12 @@ using System.Threading.Tasks;
 
 namespace Plant.Models
 {
-    class CartCreate
+   public class CartCreate
     {
-        [Key]
+        [Required]
         public int CartId { get; set; }
         [Required]
         public int PlantId { get; set; }
-        [Required]
-        public decimal TotalPrice { get; set; }
-
 
         public override int GetHashCode() => PlantId;
     }
