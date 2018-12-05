@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plant.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,14 +8,16 @@ using System.Threading.Tasks;
 
 namespace Plant.Models
 {
-   public class PlantListItem
-    {
-        [Display(Name="PlantNumber")]
-        public int PlantId { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
+    public class PlantListItem
+    { 
+        [Required]
+        public string PlantName { get; set; }
+        [Required]
         public int Quantity { get; set; }
-
-        public override string ToString() => Name;
+        [Required]
+        public Guid OwnerId { get; set; }
+        [Required]
+        public PlantType TypeOfPlant { get; set; }
     }
+
 }

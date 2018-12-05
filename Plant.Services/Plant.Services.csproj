@@ -54,11 +54,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartService.cs" />
+    <Compile Include="PlantService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Plant.Data\Plant.Data.csproj">
+      <Project>{6cf6a2bb-41d6-46d5-8879-b12fcbca75f1}</Project>
+      <Name>Plant.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plant.Models\Plant.Models.csproj">
+      <Project>{2ed5b115-7945-40d4-950f-bdb48f815985}</Project>
+      <Name>Plant.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

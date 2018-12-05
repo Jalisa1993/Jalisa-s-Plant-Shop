@@ -10,9 +10,9 @@ namespace Plant.Data
     public class Request
     {
         [Key]
-        public int RequestsId { get; set; }
+        public int RequestId { get; set; }
         [Required]
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
         [Required]
         public string Content { get; set; }
     }

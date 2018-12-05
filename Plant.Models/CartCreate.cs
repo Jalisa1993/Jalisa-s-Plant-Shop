@@ -13,6 +13,8 @@ namespace Plant.Models
         public int CartId { get; set; }
         [Required]
         public int PlantId { get; set; }
+        [Required]
+        public int UserId { get; set; }
 
         public override int GetHashCode() => PlantId;
     }

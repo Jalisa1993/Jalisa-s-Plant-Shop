@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plant.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,14 +8,6 @@ using System.Threading.Tasks;
 
 namespace Plant.Models
 {
-    public enum PlantType
-    {
-        Annual,
-        Evergreen,
-        Perennials,
-        Biennial,
-    }
-
     public class PlantCreate
     {
         [Key]
@@ -25,8 +18,7 @@ namespace Plant.Models
         public string Name { get; set; }
         [Required]
         public int Quantity { get; set; }
-
-        public override string ToString() => Name;
-        
+        [Required]
+        public Guid OwnerId { get; set; }
     }
 }

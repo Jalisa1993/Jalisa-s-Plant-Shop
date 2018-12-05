@@ -13,7 +13,8 @@ namespace Plant.Models
         public int RequestId { get; set; }
         [Required]
         public int UserId { get; set; }
+        [Required]
+        public string Content { get; set; }
 
-        public override int GetHashCode() => UserId;
     }
 }
