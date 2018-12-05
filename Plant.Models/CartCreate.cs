@@ -14,8 +14,8 @@ namespace Plant.Models
         [Required]
         public int PlantId { get; set; }
         [Required]
-        public int UserId { get; set; }
-
-        public override int GetHashCode() => PlantId;
+        public Guid UserId { get; set; }
+        [Required]
+        public decimal TotalPrice { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace Plant.Data
         [Key]
         public int CartId { get; set; }
         [Required]
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
         [Required]
         public int PlantId { get; set; }
         [Required]
