@@ -1,4 +1,6 @@
-﻿using Plant.Models;
+﻿using Microsoft.AspNet.Identity;
+using Plant.Models;
+using Plant.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,9 @@ namespace Plant.WebMVC.Controllers
         // GET: Request
         public ActionResult Index()
         {
-            var model = new RequestListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RequestService(userId);
+            var model = service.GetRequests();
             return View(model);
         }
 
@@ -26,11 +30,17 @@ namespace Plant.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(RequestCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new RequestService(userId);
+
+            service.CreatesRequest(model);
+
+            return RedirectToAction("Index");
         }
     }
 }

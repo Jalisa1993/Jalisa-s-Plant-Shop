@@ -1,4 +1,6 @@
-﻿using Plant.Models;
+﻿using Microsoft.AspNet.Identity;
+using Plant.Models;
+using Plant.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,9 @@ namespace Plant.WebMVC.Controllers
         // GET: Plant
         public ActionResult Index()
         {
-            var model = new PlantListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new PlantService(userId);
+            var model = service.GetPlants();
             return View(model);
         }
 
@@ -28,9 +32,15 @@ namespace Plant.WebMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new PlantService(userId);
+
+            service.CreatePlants(model);
+
+            return RedirectToAction("Index");
         }
     }
 }

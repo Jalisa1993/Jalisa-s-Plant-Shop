@@ -17,7 +17,7 @@ namespace Plant.Services
             _userId = UserId;
         }
 
-        public bool CreatesCart(CartCreate model)
+        public bool CreateCart(CartCreate model)
         {
             var entity =
                 new Cart()

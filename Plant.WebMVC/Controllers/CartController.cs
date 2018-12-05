@@ -1,4 +1,6 @@
-﻿using Plant.Models;
+﻿using Microsoft.AspNet.Identity;
+using Plant.Models;
+using Plant.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,13 +26,19 @@ namespace Plant.WebMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CartController model)
+        public ActionResult Create(CartCreate model)
         {
             if (ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CartService(userId);
+
+            service.CreateCart(model);
+
+            return RedirectToAction("Index");
         }
     }
 }
