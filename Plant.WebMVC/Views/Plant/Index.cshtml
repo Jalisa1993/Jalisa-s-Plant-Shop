@@ -9,13 +9,22 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@if(TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role"alert">
+        @ViewBag.SaveResult
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+    </div>
+}
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.PlantId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.PlantName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Price)
@@ -32,7 +41,7 @@
             @Html.DisplayFor(modelItem => item.PlantId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.PlantName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Price)
@@ -41,9 +50,9 @@
             @Html.DisplayFor(modelItem => item.Quantity)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { id=item.PlantId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.PlantId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PlantId })
         </td>
     </tr>
 }

@@ -10,6 +10,8 @@ namespace Plant.Models
 {
     public class PlantListItem
     { 
+        [Key]
+        public int PlantId { get; set; }
         [Required]
         public string PlantName { get; set; }
         [Required]
@@ -18,6 +20,8 @@ namespace Plant.Models
         public Guid OwnerId { get; set; }
         [Required]
         public PlantType TypeOfPlant { get; set; }
+        [Required]
+        public decimal Price { get; set; }
     }
 
 }
