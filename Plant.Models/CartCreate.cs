@@ -14,8 +14,8 @@ namespace Plant.Models
         [Required]
         public int PlantId { get; set; }
         [Required]
-        public Guid UserId { get; set; }
-        [Required]
         public decimal TotalPrice { get; set; }
+        [Required]
+        public virtual Plant.Data.Plant Plant { get; set; }
     }
 }

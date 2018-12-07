@@ -67,11 +67,8 @@ namespace Plant.Services
                     new CartDetail
                     {
                         CartId = entity.CartId,
-                        UserId = entity.UserId,
                         PlantId = entity.PlantId,
                         TotalPrice = entity.TotalPrice,
-                        Plants = entity.Plants,
-
                     };
             }
         }
@@ -86,11 +83,8 @@ namespace Plant.Services
                         .Single(e => e.CartId == model.CartId && e.UserId == _userId);
 
                 entity.CartId = model.CartId;
-                entity.UserId = model.UserId;
                 entity.PlantId = model.PlantId;
                 entity.TotalPrice = model.TotalPrice;
-                entity.Plants = model.Plant;
-
                 return ctx.SaveChanges() == 1;
             }
         }
