@@ -23,7 +23,8 @@ namespace Plant.Services
                 new Request()
                 {
                     UserId = _userId,
-                    Content = model.Content
+                    Content = model.Content,
+                    RequestId = model.RequestId,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -47,7 +48,7 @@ namespace Plant.Services
                                 new RequestListItem
                                 {
                                     RequestId = e.RequestId,
-                                    Content = e.Content
+                                    Content = e.Content,
                                 }
                         );
 

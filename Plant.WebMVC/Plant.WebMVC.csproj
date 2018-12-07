@@ -276,6 +276,9 @@
     <Content Include="Views\Plant\Details.cshtml" />
     <Content Include="Views\Plant\Edit.cshtml" />
     <Content Include="Views\Plant\Delete.cshtml" />
+    <Content Include="Views\Request\Details.cshtml" />
+    <Content Include="Views\Request\Edit.cshtml" />
+    <Content Include="Views\Request\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
