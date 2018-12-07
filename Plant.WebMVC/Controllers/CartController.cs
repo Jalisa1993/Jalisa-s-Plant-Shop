@@ -17,7 +17,7 @@ namespace Plant.WebMVC.Controllers
         {
             var UserId = Guid.Parse(User.Identity.GetUserId());
             var service = new CartService(UserId);
-            var model = service.GetCarts();
+            var model = service.GetCart();
 
             return View(model);
         }
@@ -122,7 +122,8 @@ namespace Plant.WebMVC.Controllers
 
             TempData["SaveResult"] = "Your cart was deleted.";
 
-            return RedirectToAction("Index")
+            return RedirectToAction("Index");
+        
         }
     }
 }
