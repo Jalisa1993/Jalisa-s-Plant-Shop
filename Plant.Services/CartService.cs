@@ -54,5 +54,59 @@ namespace Plant.Services
                 return query.ToArray();
             }
         }
+
+        public CartDetail GetCartById(int cartId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Carts
+                        .Single(e => e.CartId == cartId && e.UserId == _userId);
+                return
+                    new CartDetail
+                    {
+                        CartId = entity.CartId,
+                        UserId = entity.UserId,
+                        PlantId = entity.PlantId,
+                        TotalPrice = entity.TotalPrice,
+                        Plants = entity.Plants,
+
+                    };
+            }
+        }
+
+        public bool UpdateCart(CartEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Carts
+                        .Single(e => e.CartId == model.CartId && e.UserId == _userId);
+
+                entity.CartId = model.CartId;
+                entity.UserId = model.UserId;
+                entity.PlantId = model.PlantId;
+                entity.TotalPrice = model.TotalPrice;
+                entity.Plants = model.Plant;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteCart(int cartId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Carts
+                        .Single(e => e.CartId == cartId && e.UserId == _userId);
+
+                ctx.Carts.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace Plant.WebMVC.Controllers
 
             var service = CreateRequestService();
 
-            if (service.CreateRequest(model))
+            if (service.CreatesRequest(model))
             {
                 TempData["SaveResult"] = "Your note was created.";
                 return RedirectToAction("Index");
