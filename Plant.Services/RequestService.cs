@@ -52,7 +52,55 @@ namespace Plant.Services
                         );
 
                 return query.ToArray();
+            }
+        }
 
+        public RequestDetail GetRequestById(int requestId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Requests
+                        .Single(e => e.RequestId == requestId && e.UserId == _userId);
+                return
+                    new RequestDetail
+                    {
+                        RequestId = entity.RequestId,
+                        UserId = entity.UserId,
+                        Content = entity.Content,
+                    };
+            }
+        }
+
+        public bool UpdateRequest(RequestEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Requests
+                        .Single(e => e.RequestId == model.RequestId && e.UserId == _userId);
+
+                entity.RequestId = model.RequestId;
+                entity.UserId = model.UserId;
+                entity.Content = model.Content;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteRequest(int requestId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Requests
+                        .Single(e => e.RequestId == requestId && e.UserId == _userId);
+
+                ctx.Requests.Remove(entity);
+                return ctx.SaveChanges() == 1;
             }
         }
     }
