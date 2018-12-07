@@ -22,6 +22,8 @@ namespace Plant.Models
         public PlantType TypeOfPlant { get; set; }
         [Required]
         public decimal Price { get; set; }
+
+        public override string ToString() => PlantName;
     }
 
 }

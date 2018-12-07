@@ -72,6 +72,9 @@ namespace Plant.WebMVC.Controllers
                     Quantity = detail.Quantity,
                     TypeOfPlant = detail.TypeOfPlant,
                     PlantName = detail.PlantName,
+                    PlantId = detail.PlantId,
+                    Price = detail.Price,
+                    OwnerId = detail.OwnerId,
                 };
 
             return View(model);
@@ -94,7 +97,7 @@ namespace Plant.WebMVC.Controllers
             if ( service.UpdatePlant(model))
             {
                 TempData["SaveResult"] = "The plant item was updated.";
-                return View(model);
+                return RedirectToAction("Index");
             }
             ModelState.AddModelError("", "The plant item could not be updated.");
             return View(model);

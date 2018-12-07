@@ -7,13 +7,7 @@ using System.Threading.Tasks;
 
 namespace Plant.Data
 {
-    public enum PlantType
-    {
-        Annual,
-        Evergreen,
-        Perennials,
-        Biennial,
-    }
+    public enum PlantType { Annual = 1, Evergreen, Perennials, Biennial}
 
     public class Plant
     {

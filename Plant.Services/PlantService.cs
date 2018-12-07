@@ -25,7 +25,7 @@ namespace Plant.Services
                     OwnerId = _userId,
                     Quantity = model.Quantity,
                     TypeOfPlant = model.TypeOfPlant,
-                    PlantName = model.Name,
+                    PlantName = model.PlantName,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -49,7 +49,10 @@ namespace Plant.Services
                                 {
                                     Quantity = e.Quantity,
                                     TypeOfPlant = e.TypeOfPlant,
-                                    PlantName = e.PlantName
+                                    PlantName = e.PlantName,
+                                    Price = e.Price,
+                                    OwnerId = e.OwnerId,
+                                    PlantId = e.PlantId,
                                 }
                             );
 
@@ -89,6 +92,8 @@ namespace Plant.Services
                 entity.TypeOfPlant = model.TypeOfPlant;
                 entity.PlantName = model.PlantName;
                 entity.PlantId = model.PlantId;
+                entity.OwnerId = _userId;
+                entity.Price = model.Price;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -96,13 +101,16 @@ namespace Plant.Services
 
         public bool DeletePlant(int plantId)
         {
+
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Plants
                         .Single(e => e.PlantId == plantId && e.OwnerId == _userId);
+
                 ctx.Plants.Remove(entity);
+
                 return ctx.SaveChanges() == 1;
             }
         }

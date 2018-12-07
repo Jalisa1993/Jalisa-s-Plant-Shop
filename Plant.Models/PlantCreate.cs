@@ -15,12 +15,14 @@ namespace Plant.Models
         [Required]
         public PlantType TypeOfPlant { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string PlantName { get; set; }
         [Required]
         public int Quantity { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
         [Required]
         public decimal Price { get; set; }
+
+        public override string ToString() => PlantName;
     }
 }
