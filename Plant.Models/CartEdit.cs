@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plant.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace Plant.Models
         public int CartId { get; set; }
         public int PlantId { get; set; }
         public decimal TotalPrice { get; set; }
-        public virtual Plant.Data.PlantItem Plant { get; set; }
+        public virtual PlantItem Plant { get; set; }
+        public int Quantity { get; set; }
     }
 }
