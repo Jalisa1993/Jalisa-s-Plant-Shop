@@ -69,7 +69,6 @@ namespace Plant.WebMVC.Controllers
             var model =
                 new CartEdit
                 {
-                    CartId = detail.CartId,
                     PlantId = detail.PlantId,
                     TotalPrice = detail.TotalPrice,
                     Plant = detail.Plants,
@@ -77,6 +76,7 @@ namespace Plant.WebMVC.Controllers
 
             return View(model);
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, CartEdit model)

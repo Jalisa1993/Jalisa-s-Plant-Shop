@@ -10,12 +10,10 @@ namespace Plant.Models
    public class CartCreate
     {
         [Required]
-        public int CartId { get; set; }
-        [Required]
         public int PlantId { get; set; }
         [Required]
         public decimal TotalPrice { get; set; }
         [Required]
-        public virtual Plant.Data.Plant Plant { get; set; }
+        public virtual Plant.Data.PlantItem Plant { get; set; }
     }
 }

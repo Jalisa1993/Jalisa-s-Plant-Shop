@@ -20,7 +20,7 @@ namespace Plant.Services
         public bool CreatePlants(PlantCreate model)
         {
             var entity =
-                new Plant.Data.Plant()
+                new Plant.Data.PlantItem()
                 {
                     OwnerId = _userId,
                     Quantity = model.Quantity,

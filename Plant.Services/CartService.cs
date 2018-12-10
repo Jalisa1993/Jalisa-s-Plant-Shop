@@ -22,9 +22,9 @@ namespace Plant.Services
             var entity =
                 new Cart()
                 {
-                    CartId = model.CartId,
                     PlantId = model.PlantId,
                     TotalPrice = model.TotalPrice,
+                    UserId = _userId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -46,9 +46,9 @@ namespace Plant.Services
                             c =>
                                 new CartListItem
                                 {
-                                    CartId = c.CartId,
                                     PlantId = c.PlantId,
                                     TotalPrice = c.TotalPrice,
+                                    CartId = c.CartId,
                                 }
                         );
                 return query.ToArray();
@@ -66,7 +66,6 @@ namespace Plant.Services
                 return
                     new CartDetail
                     {
-                        CartId = entity.CartId,
                         PlantId = entity.PlantId,
                         TotalPrice = entity.TotalPrice,
                     };
@@ -82,7 +81,6 @@ namespace Plant.Services
                         .Carts
                         .Single(e => e.CartId == model.CartId && e.UserId == _userId);
 
-                entity.CartId = model.CartId;
                 entity.PlantId = model.PlantId;
                 entity.TotalPrice = model.TotalPrice;
                 return ctx.SaveChanges() == 1;

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Plant.Data
 {
-    public enum PlantType { Annual = 1, Evergreen, Perennials, Biennial}
+    public enum PlantType { Annual = 1, Evergreen, Perennials, Biennial, Herbaceous}
 
-    public class Plant
+    public class PlantItem
     {
         [Key]
         public int PlantId { get; set; }

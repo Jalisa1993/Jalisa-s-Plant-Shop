@@ -31,7 +31,7 @@ namespace Plant.Data
         {
             return new ApplicationDbContext();
         }
-        public DbSet<Plant> Plants { get; set; }
+        public DbSet<PlantItem> Plants { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Request> Requests { get; set; }
 
