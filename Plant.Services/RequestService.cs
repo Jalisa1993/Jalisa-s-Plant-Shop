@@ -83,7 +83,6 @@ namespace Plant.Services
                         .Single(e => e.RequestId == model.RequestId && e.OwnerId == _userId);
 
                 entity.RequestId = model.RequestId;
-                entity.OwnerId = model.UserId;
                 entity.Content = model.Content;
 
                 return ctx.SaveChanges() == 1;

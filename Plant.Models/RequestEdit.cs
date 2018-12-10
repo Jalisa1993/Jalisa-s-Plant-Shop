@@ -12,8 +12,6 @@ namespace Plant.Models
         [Key]
         public int RequestId { get; set; }
         [Required]
-        public Guid UserId { get; set; }
-        [Required]
         public string Content { get; set; }
     }
 }
