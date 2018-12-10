@@ -64,8 +64,12 @@
     <Compile Include="Migrations\201812101631333_NameChangeForUserId.Designer.cs">
       <DependentUpon>201812101631333_NameChangeForUserId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812102108218_AddedQuantityToCart.cs" />
+    <Compile Include="Migrations\201812102108218_AddedQuantityToCart.Designer.cs">
+      <DependentUpon>201812102108218_AddedQuantityToCart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Plant.cs" />
+    <Compile Include="PlantItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request.cs" />
   </ItemGroup>
@@ -79,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812101631333_NameChangeForUserId.resx">
       <DependentUpon>201812101631333_NameChangeForUserId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812102108218_AddedQuantityToCart.resx">
+      <DependentUpon>201812102108218_AddedQuantityToCart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

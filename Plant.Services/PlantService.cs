@@ -26,6 +26,7 @@ namespace Plant.Services
                     Quantity = model.Quantity,
                     TypeOfPlant = model.TypeOfPlant,
                     PlantName = model.PlantName,
+                    Price = model.Price,
                 };
 
             using (var ctx = new ApplicationDbContext())

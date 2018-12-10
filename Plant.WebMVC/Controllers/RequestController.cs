@@ -13,6 +13,7 @@ namespace Plant.WebMVC.Controllers
     public class RequestController : Controller
     {
         // GET: Request
+        // localhost:xxxxx/Request/Index
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -21,7 +22,7 @@ namespace Plant.WebMVC.Controllers
 
             return View(model);
         }
-
+        // localhost:xxxxx/Request/Create
         public ActionResult Create()
         {
             return View();
@@ -46,6 +47,7 @@ namespace Plant.WebMVC.Controllers
             return View(model);
         }
 
+        // localhost:xxxxx/Request/Details/1
         public ActionResult Details(int id)
         {
             var svc = CreateRequestService();

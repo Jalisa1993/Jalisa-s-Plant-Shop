@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plant.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Plant.Models
         [Required]
         public decimal TotalPrice { get; set; }
         [Required]
-        public virtual Plant.Data.PlantItem Plants { get; set; }
+        public virtual PlantItem Plants { get; set; }
 
     }
         

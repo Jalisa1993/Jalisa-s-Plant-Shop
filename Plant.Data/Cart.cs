@@ -17,7 +17,9 @@ namespace Plant.Data
         public int PlantId { get; set; }
         [Required]
         public decimal TotalPrice { get; set; }
-        
+        [Required]
+        public int Quantity { get; set; }
+
         public virtual PlantItem Plant { get; set; }
     }
 }
