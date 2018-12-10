@@ -22,7 +22,7 @@ namespace Plant.Services
             var entity =
                 new Request()
                 {
-                    UserId = _userId,
+                    OwnerId = _userId,
                     Content = model.Content,
                     RequestId = model.RequestId,
                 };
@@ -42,7 +42,7 @@ namespace Plant.Services
                 var query =
                     ctx
                         .Requests
-                        .Where(e => e.UserId == _userId)
+                        .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
                                 new RequestListItem
@@ -63,12 +63,11 @@ namespace Plant.Services
                 var entity =
                     ctx
                         .Requests
-                        .Single(e => e.RequestId == requestId && e.UserId == _userId);
+                        .Single(e => e.RequestId == requestId && e.OwnerId == _userId);
                 return
                     new RequestDetail
                     {
                         RequestId = entity.RequestId,
-                        UserId = entity.UserId,
                         Content = entity.Content,
                     };
             }
@@ -81,10 +80,10 @@ namespace Plant.Services
                 var entity =
                     ctx
                         .Requests
-                        .Single(e => e.RequestId == model.RequestId && e.UserId == _userId);
+                        .Single(e => e.RequestId == model.RequestId && e.OwnerId == _userId);
 
                 entity.RequestId = model.RequestId;
-                entity.UserId = model.UserId;
+                entity.OwnerId = model.UserId;
                 entity.Content = model.Content;
 
                 return ctx.SaveChanges() == 1;
@@ -98,7 +97,7 @@ namespace Plant.Services
                 var entity =
                     ctx
                         .Requests
-                        .Single(e => e.RequestId == requestId && e.UserId == _userId);
+                        .Single(e => e.RequestId == requestId && e.OwnerId == _userId);
 
                 ctx.Requests.Remove(entity);
                 return ctx.SaveChanges() == 1;

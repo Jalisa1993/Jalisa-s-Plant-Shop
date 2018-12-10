@@ -24,7 +24,7 @@ namespace Plant.Services
                 {
                     PlantId = model.PlantId,
                     TotalPrice = model.TotalPrice,
-                    UserId = _userId
+                    OwnerId = _userId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -41,7 +41,7 @@ namespace Plant.Services
                 var query =
                     ctx
                         .Carts
-                        .Where(e => e.UserId == _userId)
+                        .Where(e => e.OwnerId == _userId)
                         .Select(
                             c =>
                                 new CartListItem
@@ -62,7 +62,7 @@ namespace Plant.Services
                 var entity =
                     ctx
                         .Carts
-                        .Single(e => e.CartId == cartId && e.UserId == _userId);
+                        .Single(e => e.CartId == cartId && e.OwnerId == _userId);
                 return
                     new CartDetail
                     {
@@ -79,7 +79,7 @@ namespace Plant.Services
                 var entity =
                     ctx
                         .Carts
-                        .Single(e => e.CartId == model.CartId && e.UserId == _userId);
+                        .Single(e => e.CartId == model.CartId && e.OwnerId == _userId);
 
                 entity.PlantId = model.PlantId;
                 entity.TotalPrice = model.TotalPrice;
@@ -94,7 +94,7 @@ namespace Plant.Services
                 var entity =
                     ctx
                         .Carts
-                        .Single(e => e.CartId == cartId && e.UserId == _userId);
+                        .Single(e => e.CartId == cartId && e.OwnerId == _userId);
 
                 ctx.Carts.Remove(entity);
                 return ctx.SaveChanges() == 1;
