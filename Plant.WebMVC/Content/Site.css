@@ -16,6 +16,11 @@
     white-space: normal;
 }
 
+.navbar {
+    padding-top: -3em;
+    padding-bottom: unset;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
@@ -23,20 +28,20 @@ textarea {
     max-width: 280px;
 }
 
-.item-image {
-    
-    object-fit: contain;
-    background-repeat: no-repeat;
-    max-width: 100%;
-    height: auto;
-    text-indent: -9999px;
-}
-
 .jumbotron {
-    border-color:aqua;
-    background-color: #B4B0C1
+    background-color: blanchedalmond;
 }
 
 body {
-    background-color: #9F9180;
+    background-color: blanchedalmond;
+}       
+
+.carousel{
+    border-collapse:initial;
 }
+
+
+.navbar {
+    background-color: forestgreen;
+}
+
