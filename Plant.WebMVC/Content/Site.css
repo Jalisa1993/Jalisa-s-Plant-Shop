@@ -24,6 +24,19 @@ textarea {
 }
 
 .item-image {
-   width: 800px;
-   height: 220px;
+    
+    object-fit: contain;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    height: auto;
+    text-indent: -9999px;
+}
+
+.jumbotron {
+    border-color:aqua;
+    background-color: #B4B0C1
+}
+
+body {
+    background-color: #9F9180;
 }
