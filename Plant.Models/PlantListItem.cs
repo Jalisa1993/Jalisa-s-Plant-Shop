@@ -11,8 +11,10 @@ namespace Plant.Models
     public class PlantListItem
     { 
         [Key]
+        [Display(Name ="Plant Id")]
         public int PlantId { get; set; }
         [Required]
+        [Display(Name ="Plant Name")]
         public string PlantName { get; set; }
         [Required]
         public int Quantity { get; set; }

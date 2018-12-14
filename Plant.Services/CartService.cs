@@ -24,7 +24,7 @@ namespace Plant.Services
                 {
                     PlantId = model.PlantId,
                     TotalPrice = model.TotalPrice,
-                    OwnerId = _userId
+                    OwnerId = _userId,
                 };
 
             using (var ctx = new ApplicationDbContext())

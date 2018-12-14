@@ -24,6 +24,9 @@ namespace Plant.WebMVC.Controllers
 
         public ActionResult Create()
         {
+            var service = CreatePlantService();
+            var plant = service.GetPlants();
+            ViewBag.PlantId = new SelectList(plant, "PlantId", "PlantName");
             return View();
         }
 
@@ -123,6 +126,14 @@ namespace Plant.WebMVC.Controllers
 
             return RedirectToAction("Index");
         
+        }
+        
+        public PlantService CreatePlantService()
+        {
+            var UserId = Guid.Parse(User.Identity.GetUserId());
+            var service = new PlantService(UserId);
+
+            return service;
         }
     }
 }

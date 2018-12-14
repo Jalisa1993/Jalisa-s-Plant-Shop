@@ -7,12 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Plant.Models
-{
+{   
     public class PlantCreate
     {
         [Key]
+        [Display(Name ="Plant Id")]
         public int PlantId { get; set; }
         [Required]
+        [Display(Name ="Type Of Plant")]
         public PlantType TypeOfPlant { get; set; }
         [Required]
         public string PlantName { get; set; }
@@ -21,7 +23,7 @@ namespace Plant.Models
         [Required]
         public Guid OwnerId { get; set; }
         [Required]
-        public decimal Price { get; set; }
+        public decimal TotalPrice { get; set; }
 
         public override string ToString() => PlantName;
     }

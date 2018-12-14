@@ -9,6 +9,7 @@ namespace Plant.Models
 {
     public class PlantDetail
     {
+
         public int PlantId { get; set; }
         public PlantType TypeOfPlant { get; set; }
         public string PlantName { get; set; }
