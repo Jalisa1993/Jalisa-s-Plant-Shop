@@ -74,7 +74,6 @@ namespace Plant.WebMVC.Controllers
                     PlantName = detail.PlantName,
                     PlantId = detail.PlantId,
                     Price = detail.Price,
-                    OwnerId = detail.OwnerId,
                 };
 
             return View(model);

@@ -14,6 +14,5 @@ namespace Plant.Models
         public string PlantName { get; set; }
         public decimal Price { get; set; }
         public PlantType TypeOfPlant { get; set; }
-        public Guid OwnerId { get; set; }
     }
 }

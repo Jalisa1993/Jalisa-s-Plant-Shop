@@ -11,7 +11,6 @@ namespace Plant.Models
     {
         public int CartId { get; set; }
         public int PlantId { get; set; }
-        public decimal TotalPrice { get; set; }
         public virtual PlantItem Plant { get; set; }
         public int Quantity { get; set; }
     }

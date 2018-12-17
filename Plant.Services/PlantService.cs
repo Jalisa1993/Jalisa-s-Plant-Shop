@@ -93,7 +93,6 @@ namespace Plant.Services
                 entity.TypeOfPlant = model.TypeOfPlant;
                 entity.PlantName = model.PlantName;
                 entity.PlantId = model.PlantId;
-                entity.OwnerId = _userId;
                 entity.Price = model.Price;
 
                 return ctx.SaveChanges() == 1;
