@@ -73,7 +73,6 @@ namespace Plant.WebMVC.Controllers
                 new CartEdit
                 {
                     PlantId = detail.PlantId,
-                    TotalPrice = detail.TotalPrice,
                     Plant = detail.Plants,
                 };
 

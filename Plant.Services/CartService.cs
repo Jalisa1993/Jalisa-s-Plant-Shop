@@ -23,7 +23,6 @@ namespace Plant.Services
                 new Cart()
                 {
                     PlantId = model.PlantId,
-                    TotalPrice = model.TotalPrice,
                     OwnerId = _userId,
                 };
 
@@ -82,7 +81,6 @@ namespace Plant.Services
                         .Single(e => e.CartId == model.CartId && e.OwnerId == _userId);
 
                 entity.PlantId = model.PlantId;
-                entity.TotalPrice = model.TotalPrice;
                 return ctx.SaveChanges() == 1;
             }
         }

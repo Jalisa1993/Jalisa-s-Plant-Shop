@@ -13,8 +13,6 @@ namespace Plant.Models
         [Required]
         public int PlantId { get; set; }
         [Required]
-        public decimal TotalPrice { get; set; }
-        [Required]
         public virtual PlantItem Plant { get; set; }
         [Required]
         public int Quantity { get; set; }
