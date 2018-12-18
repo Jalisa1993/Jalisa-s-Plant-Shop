@@ -52,7 +52,6 @@ namespace Plant.Services
                                     TypeOfPlant = e.TypeOfPlant,
                                     PlantName = e.PlantName,
                                     Price = e.Price,
-                                    OwnerId = e.OwnerId,
                                     PlantId = e.PlantId,
                                 }
                             );
