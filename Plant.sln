@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plant.Services", "Plant.Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plant.Tests", "Plant.Tests\Plant.Tests.csproj", "{6FEBFB8E-2A72-4EDF-88A9-F319122CE11A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plant.WebApi", "Plant.WebApi\Plant.WebApi.csproj", "{30D58199-4F07-4BC1-B443-48E3D8195078}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{6FEBFB8E-2A72-4EDF-88A9-F319122CE11A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FEBFB8E-2A72-4EDF-88A9-F319122CE11A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FEBFB8E-2A72-4EDF-88A9-F319122CE11A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{30D58199-4F07-4BC1-B443-48E3D8195078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{30D58199-4F07-4BC1-B443-48E3D8195078}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{30D58199-4F07-4BC1-B443-48E3D8195078}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{30D58199-4F07-4BC1-B443-48E3D8195078}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
